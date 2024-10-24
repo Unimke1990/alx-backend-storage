@@ -5,9 +5,10 @@ CREATE TRIGGER decrease_item_qauntity_after_order
 AFTER INSERT ON orders
 FOR EACH ROW ON
 BEGIN
-UPDATE items
-SET quantity = quantity - NEW.quantity_ordered
-WHERE id = items_id;
-END//
+	UPDATE items
+	SET quantity = quantity - NEW.quantity_ordered
+	WHERE id = items_id;
+END;
+//
 
 DELIMITER ;
