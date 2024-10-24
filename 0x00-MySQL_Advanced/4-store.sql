@@ -3,7 +3,7 @@ DELIMITER //
 
 CREATE TRIGGER decrease_item_qauntity_after_order
 AFTER INSERT ON orders
-FOR EACH ROW ON
+FOR EACH ROW
 BEGIN
 	UPDATE items
 	SET quantity = quantity - NEW.quantity_ordered
